@@ -20,7 +20,9 @@ app.use(express.static('public'))
 app.use(errorHandler())
 
 // Set up database connection
-mongoose.connect('mongodb://localhost:27017/posts', {
+const dev_db_url = 'mongodb://localhost:27017/posts'
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true

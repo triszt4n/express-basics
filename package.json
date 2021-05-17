@@ -1,12 +1,16 @@
 {
   "name": "exp-app",
   "version": "1.0.0",
+  "engines": { 
+    "node": "v12.14.1" 
+  }, 
   "description": "",
   "main": "build/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "watch": "concurrently -k -n \"TSC,Node\" -c \"cyan.bold,green.bold\" \"npm:tsc -- --watch\" \"nodemon build/server.js\""
+    "watch": "concurrently -k -n \"TSC,Node\" -c \"cyan.bold,green.bold\" \"npm:tsc -- --watch\" \"nodemon build/server.js\"",
+    "start": "node build/server.js"
   },
   "keywords": [],
   "author": "",
