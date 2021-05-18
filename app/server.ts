@@ -25,13 +25,14 @@ const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {
     useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    bufferCommands: false
 }, () => {
     console.log('Connected to database!')
 })
 
 // Serve the application at the given port
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     // Success callback
     console.log(`Listening at http://localhost:${port}/`);
 })
